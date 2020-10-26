@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import logger from './lib/logger.js';
 import mongoose from 'mongoose';
+import cors from 'cors';
 // midlewares
 import httpLoggerMiddleware from './middleware/logger-middleware.js';
 import jsonResponseMiddleware from './middleware/json-response.js';
@@ -22,6 +23,7 @@ mongoose.connect(databaseURI, {
   useUnifiedTopology: true,
 });
 
+server.use(cors());
 // El servidor utilizará como deserializador de data bodyparser y deserializara en JSON
 server.use(bodyParser.json());
 // Utiliza un middleware que permite tener descripciones mas especificas en la consola

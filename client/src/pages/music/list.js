@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { getAllMusic } from '../../lib/fetch-music.js';
 
-getAllMusic().then((data) => console.log({ data }));
-
 const ListMusic = () => {
   const [musicData, setMusicData] = useState([]);
 
   const fetchAllMusic = async () => {
-    // const data = await getAllMusic();
-    // setMusicData(data);
+    const data = await getAllMusic();
+    console.log({ data });
+    setMusicData(data);
   };
 
   useEffect(() => {

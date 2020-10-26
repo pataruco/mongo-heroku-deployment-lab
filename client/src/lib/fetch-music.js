@@ -1,5 +1,4 @@
 export const getAllMusic = async () => {
-  const response = await fetch('/music');
-  const data = await response.text();
-  console.log({ response, data });
+  const response = await fetch('http://localhost:5000/music');
+  return await response.json();
 };
