@@ -6,6 +6,7 @@ import Header from './Header.js';
 // pages
 import Home from '../pages/Home.js';
 import ListMusic from '../pages/music/list.js';
+import NewMusic from '../pages/music/new.js';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/music/new" component={NewMusic} />
           <Route path="/music" component={ListMusic} />
         </Switch>
         <Footer />
